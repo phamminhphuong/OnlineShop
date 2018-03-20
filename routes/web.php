@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Home\HomeController@index');
+Route::get('/category/{id}', 'Home\CategoryController@index');
+Route::get('/post/{id}', 'Home\PostController@index');
+Route::get('/product/{id}', 'Home\ProductController@index');
 
 // phan route admin
 Route::group(['prefix' => 'admin'],function(){
