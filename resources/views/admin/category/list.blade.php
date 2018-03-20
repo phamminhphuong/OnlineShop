@@ -45,31 +45,31 @@
                             <thead>
                                 <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                                         name
-                                    : activate to sort column descending" style="width: 48px;">
+                                    : activate to sort column descending">
                                         Id
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending">
                                         name
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending">
                                         Priority
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending">
                                         Menu
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 60px;">
+                                    : activate to sort column ascending">
                                         Create_at
                                     </th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         old_price
-                                    : activate to sort column ascending" style="width: 57px;">
+                                    : activate to sort column ascending" >
                                         Update_at
                                     </th>
                                     <th>

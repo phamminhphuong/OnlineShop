@@ -33,79 +33,71 @@
                     </div>
                 </div>
                 <hr>
-                {{--  @if(session('thongbao'))
+                @if(session('thongbao'))
                 <div class="alert alert-success">
                     {{session('thongbao')}}
                 </div>
 
-                @endif  --}}
+                @endif
                 <hr>
                     <div class="row"><div class="col-sm-12">
                         <table id="example1" class="table table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="example1_info">
                             <thead>
                                 <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                                         name
-                                    : activate to sort column descending" style="width: 48px;">
+                                    : activate to sort column descending">
                                         Id
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending" >
                                         name
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    name
+                                : activate to sort column ascending" >
+                                    Image
+                                </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending">
                                         Old_price
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending" >
                                         New_pirce
                                     </th>
+                                   
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
-                                        Image
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
-                                        name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending" >
                                         Hot
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending" >
                                         Description
                                     </th>
+                                   
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
-                                        Vender
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
-                                        name
-                                    : activate to sort column ascending" style="width: 88px;">
-                                        Category
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
-                                        name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending">
                                         Number_of_view
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending">
                                         Number_of_sell
                                     </th>
 
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 60px;">
+                                    : activate to sort column ascending" >
                                         Create_at
                                     </th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         old_price
-                                    : activate to sort column ascending" style="width: 57px;">
+                                    : activate to sort column ascending" >
                                         Update_at
                                     </th>
                                     <th>
@@ -115,7 +107,7 @@
                             <tbody>
                              
                                 
-                                @foreach($product as $pd)
+                                    @foreach($product as $pd)
                                    <tr role="row" class="odd">
                                        <td class="sorting_1">
                                            {!!$pd->id!!}
@@ -123,6 +115,9 @@
                                        <td>
                                            {!!$pd->name!!}
                                        </td>
+                                       <td>
+                                        <img src="image/{!!$pd->image!!}" width="80px" height="80px" alt="">
+                                     </td>
                                        <td>
                                            {!!$pd->old_price!!}
                                        </td>
@@ -132,11 +127,7 @@
                                            {!!$pd->new_price!!}
                                        
                                        </td>
-                                       <td>
-                                          
-                                           {!!$pd->image!!}
-                                       
-                                       </td>
+                                      
                                        <td>
                                           
                                            {!!$pd->hot!!}
@@ -147,16 +138,7 @@
                                            {!!$pd->description!!}
                                        
                                        </td>
-                                       <td>
-                                          
-                                           {!!$pd->vendor_id!!}
-                                       
-                                       </td>
-                                       <td>
-                                          
-                                           {!!$pd->category_id!!}
-                                       
-                                       </td>
+                                      
                                        <td>
                                           
                                            {!!$pd->number_of_view!!}
@@ -177,13 +159,14 @@
                                        </td>
                                
                                        <td>
-                                           <a href="admin/product/edit/">Edit</a> |
+                                           <a href="admin/product/edit/{!!$pd->id!!}">Edit</a> |
                                            <a href="/Admin/Products/Details/4">Details</a> |
-                                           <a href="admin/product/delete/">Delete</a>
+                                           <a href="admin/product/delete/{!!$pd->id!!}">Delete</a>
                                        </td>
                                </tr>
                         
                         @endforeach
+                      
                     </tbody>
             </table>
         </div>
