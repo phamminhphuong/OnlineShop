@@ -93,7 +93,7 @@
 	margin:0px -7px;
 	width:48px;
 	height:48px;
-	background: url(http://thietbiytevp.com/engine/bullet.png) left top;
+	background: url(bullet.png) left top;
 	float: left; 
 	position:relative;
 }
@@ -115,7 +115,7 @@
 	z-index:60;
 	width: 1.1em;
 	height: 1.6em;	
-	background-image: url(http://thietbiytevp.com/engine/arrows.png);
+	background-image: url(arrows.png);
 }
 #wowslider-container1 a.ws_next{
 	background-position: 100% 0;

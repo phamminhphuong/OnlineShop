@@ -16,10 +16,22 @@ Route::get('/category/{id}', 'Home\CategoryController@index');
 Route::get('/post/{id}', 'Home\PostController@index');
 Route::get('/product/{id}', 'Home\ProductController@index');
 
+
+//api
+Route::group(['prefix' => 'api'],function(){
+    Route::get('/menu', 'Api\CommonController@menu');
+    Route::get('/hotline', 'Api\CommonController@hotline');
+
+    Route::get('/footer/contact', 'Api\FooterController@contact');
+    Route::get('/footer/privacy', 'Api\FooterController@privacy');
+    Route::get('/footer/infomation', 'Api\FooterController@infomation');
+    Route::get('/footer/instruction', 'Api\FooterController@instruction');
+
+});
 // phan route admin
 Route::group(['prefix' => 'admin'],function(){
-     // dashboard
-     Route::group(['prefix' => 'dashboard'],function(){
+    // dashboard
+    Route::group(['prefix' => 'dashboard'],function(){
         Route::get('list','DashboardController@getDashbord');
     });
     // vendor
