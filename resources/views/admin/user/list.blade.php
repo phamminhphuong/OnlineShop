@@ -1,11 +1,10 @@
-@extends('admin.layout.index')
-@section("content")
+@extends('admin.layout.index') @section("content")
 <section class="content container-fluid">
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Danh sách vendor</h3>
-            <h3><a href="/Admin/Products/Create">Tạo mới</a></h3>
-        </div>
+            <h3 class="box-title">Danh sách user</h3>
+            <h3><a href="admin/users/add">Tạo mới</a></h3>
+        </div>                  
         <!-- /.box-header -->
         <div class="box-body">
             <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
@@ -23,7 +22,7 @@
                                  entries
                             </label>
                         </div>
-                     </div>
+                    </div>
                     <div class="col-sm-6">
                         <div id="example1_filter" class="dataTables_filter">
                             <label>Search:
@@ -32,24 +31,82 @@
                         </div>
                     </div>
                 </div>
-                    <div class="row"><div class="col-sm-12">
+                <hr> 
+                @if(session('thongbao'))
+                <div class="alert alert-success">
+                    {{session('thongbao')}}
+                </div>
+
+                @endif
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
                         <table id="example1" class="table table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="example1_info">
                             <thead>
-                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                                <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
                                         name
-                                    : activate to sort column descending" style="width: 48px;">
+                                    : activate to sort column descending">
                                         Id
-                                    </th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    </th>
+                                   
+                                   
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 88px;">
+                                    : activate to sort column ascending">
                                         Name
-                                    </th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    name
+                                : activate to sort column ascending">
+                                        Image
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         name
-                                    : activate to sort column ascending" style="width: 60px;">
+                                    : activate to sort column ascending">
+                                        Date of birth
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    name
+                                : activate to sort column ascending">
+                                    Email
+                                </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    name
+                                : activate to sort column ascending">
+                                    UserName
+                                </th>
+
+                                {{--  <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    name
+                                : activate to sort column ascending" width:70px>
+                                    Password
+                                </th>  --}}
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                        name
+                                    : activate to sort column ascending">
+                                        Address
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                        name
+                                    : activate to sort column ascending">
+                                        Phone
+                                    </th>
+                                   
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                        name
+                                    : activate to sort column ascending">
+                                        Type
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                        name
+                                    : activate to sort column ascending">
                                         Create_at
-                                    </th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
+                                    </th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="
                                         old_price
-                                    : activate to sort column ascending" style="width: 57px;">
+                                    : activate to sort column ascending">
                                         Update_at
                                     </th>
                                     <th>
@@ -57,32 +114,88 @@
                                     </th>
                             </thead>
                             <tbody>
-                            <tr role="row" class="odd">
+                                @foreach($user as $u)
+                                <tr role="row" class="odd">
                                     <td class="sorting_1">
-                                        gio hang
+                                        {!!$u->id!!}
+                                    </td>
+                                   
+                                    <td>
+                                        {!!$u->name!!}
+                                    </td> 
+                                    <td>
+                                        <img src="image_user/{!!$u->image!!}" width="80px" height="80px" alt="">
                                     </td>
                                     <td>
-                                        Công ty PFT
+
+                                        {!!$u->date_of_birth!!}
+
+                                    </td> 
+                                    <td>
+
+                                        {!!$u->email!!}
+
                                     </td>
                                     <td>
-                                        giường cao cấp
+                                        {!!$u->username!!}
                                     </td>
-                                     <td>
-                                        100
+                                    {{--  <td style="width:70px">
+                                        {!!$u->password!!}
+                                    </td>   --}}
+                                   
+                                    <td>
+
+                                        {!!$u->address!!}
+
+                                    </td> 
+                                    <td>
+
+                                        {!!$u->phone!!}
+
                                     </td>
-                            
-                                     <td>
-                                        <a href="/Admin/Products/Edit/4">Edit</a> |
+                                   
+                                    <td>
+
+                                        {!!$u->type!!}
+
+                                    </td>
+
+                                    <td>
+                                        {!!$u->created_at!!}
+                                    </td>
+
+                                    <td>
+                                        {!!$u->updated_at!!}
+                                    </td>
+
+                                    <td>
+                                        <a href="admin/users/edit/{!!$u->id!!}">Edit</a> |
                                         <a href="/Admin/Products/Details/4">Details</a> |
-                                        <a href="/Admin/Products/Delete/4">Delete</a>
+                                        <a href="admin/users/delete/{!!$u->id!!}">Delete</a>
                                     </td>
-                            </tr>
-                                
-                    </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="row"><div class="col-sm-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button next disabled" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0">Next</a></li></ul></div></div></div></div>
+                                </tr>
+
+                                @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0">Previous</a></li>
+                                <li class="paginate_button active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0">1</a></li>
+                                <li class="paginate_button next disabled" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
