@@ -18,6 +18,10 @@ Route::get('/product/{id}', 'Home\ProductController@index');
 
 // phan route admin
 Route::group(['prefix' => 'admin'],function(){
+     // dashboard
+     Route::group(['prefix' => 'dashboard'],function(){
+        Route::get('list','DashboardController@getDashbord');
+    });
     // vendor
     Route::group(['prefix' => 'vendor'],function(){
         Route::get('list','VendorController@getListVendor');
@@ -62,5 +66,50 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('edit/{id}','ProductController@getEditProduct');
         Route::post('edit/{id}','ProductController@postEditProduct');
         Route::get('delete/{id}','ProductController@postDeleteProduct');
+    });
+    //  user
+    Route::group(['prefix' => 'users'],function(){
+        Route::get('list','UserController@getListUser');
+        Route::get('add','UserController@getAddUser');
+        Route::post('add','UserController@postAddUser');
+        Route::get('edit/{id}','UserController@getEditUser');
+        Route::post('edit/{id}','UserController@postEditUser');
+        Route::get('delete/{id}','UserController@postDeleteUser');
+    });
+    //  slide
+    Route::group(['prefix' => 'slide'],function(){
+        Route::get('list','SlideController@getListSlide');
+        Route::get('add','SlideController@getAddSlide');
+        Route::post('add','SlideController@postAddSlide');
+        Route::get('edit/{id}','SlideController@getEditSlide');
+        Route::post('edit/{id}','SlideController@postEditSlide');
+        Route::get('delete/{id}','SlideController@postDeleteSlide');
+    });
+    //  instruction
+    Route::group(['prefix' => 'instruction'],function(){
+        Route::get('list','InstructionController@getListIntruction');
+        Route::get('add','InstructionController@getAddIntruction');
+        Route::post('add','InstructionController@postAddIntruction');
+        Route::get('edit/{id}','InstructionController@getEditIntruction');
+        Route::post('edit/{id}','InstructionController@postEditIntruction');
+        Route::get('delete/{id}','InstructionController@postDeleteIntruction');
+    });
+    //  config
+    Route::group(['prefix' => 'config'],function(){
+        Route::get('list','ConfigController@getListConfig');
+        Route::get('add','ConfigController@getAddConfig');
+        Route::post('add','ConfigController@postAddConfig');
+        Route::get('edit/{id}','ConfigController@getEditConfig');
+        Route::post('edit/{id}','ConfigController@postEditConfig');
+        Route::get('delete/{id}','ConfigController@postDeleteConfig');
+    });
+    //  privacy
+    Route::group(['prefix' => 'privacy'],function(){
+        Route::get('list','PrivacyController@getListPrivacy');
+        Route::get('add','PrivacyController@getAddPrivacy');
+        Route::post('add','PrivacyController@postAddPrivacy');
+        Route::get('edit/{id}','PrivacyController@getEditPrivacy');
+        Route::post('edit/{id}','PrivacyController@postEditPrivacy');
+        Route::get('delete/{id}','PrivacyController@postDeletePrivacy');
     });
 });
