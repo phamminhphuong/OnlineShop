@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 class UserController extends Controller
 {
-              //  danh sach
-              public function getListUser(){
+            //  danh sach
+            public function getListUser(){
                 $user=User::all();
                 return view('admin.user.list',['user'=>$user]);
              
