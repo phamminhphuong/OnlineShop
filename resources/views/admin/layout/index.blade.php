@@ -23,7 +23,7 @@
   <!-- jvectormap -->
   <link rel="stylesheet" href="style_admin/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="style_admin/style_admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="style_admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="style_admin/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
@@ -302,7 +302,8 @@
 <script src="style_admin/dist/js/demo.js"></script>
 <script src="style_admin/ckeditor/ckeditor.js">
 </script>
- @yield('script')
-
+<script src="style_admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="style_admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+@yield('script')
 </body>
 </html>
